@@ -47,8 +47,13 @@ public class Main {
         System.out.println("Valor total da compra:");
         double total = scan.nextDouble();
         scan.nextLine();
-        System.out.printf("Troco a ser devolvido: %.2f\n", valor-total);
-        VoltarMenu();
+        if (valor-total < 0){
+            System.out.println("Valor insuficiênte, tente novamente");
+            CalculoDeTroco();
+        }else{
+            System.out.printf("Troco a ser devolvido: %.2f\n", valor-total);
+            VoltarMenu();
+        }
     }
 
     public static void VoltarMenu(){
